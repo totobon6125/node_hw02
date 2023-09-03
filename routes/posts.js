@@ -48,11 +48,8 @@ router.get('/posts', async (req, res, next) => {
 
     return res.status(200).json({ data: posts });
   } catch (err) {
-    let error = err
-    if (err === error) {
-      return console.log(잡혀라)
-    }
     console.log(err)
+    res.status(500).json({ message: '서버 오류가 발생했습니다.' });
   }
 });
 
@@ -76,6 +73,7 @@ router.get('/posts/:postId', async (req, res, next) => {
     return res.status(200).json({ data: post });
   } catch (err) {
     console.log(err)
+    res.status(500).json({ message: '서버 오류가 발생했습니다.' });
   }
 });
 
@@ -112,6 +110,7 @@ router.put('/posts/:postId', async (req, res, next) => {
     return res.status(200).json({ data: '게시글이 수정되었습니다.' });
   } catch (err) {
     console.log(err)
+    res.status(500).json({ message: '서버 오류가 발생했습니다.' });
   }
 });
 
