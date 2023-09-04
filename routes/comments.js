@@ -38,7 +38,7 @@ router.post('/posts/:postId/comments', async (req, res, next) => {
 });
 
 
-// 게시글 전체 조회(내용제외) API - GET
+// 게시글에 해당한는 댓글 전체 조회(내용제외) API - GET
 router.get('/posts/:postId/comments', async (req, res, next) => {
 
   try {

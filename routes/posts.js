@@ -21,9 +21,11 @@ router.post('/posts', async (req, res, next) => {
 
     return res.status(201).json({ data: post });
   } catch (err) {
+    console.log(err)
+    console.log("여기" + err + "까지")
     if (err.code === 'P2002') {
       return res.status(400).json({ errMessage: "아이디가 중복 입니다." });
-    } else if(!user || !password) {
+    } else if (!user || !password) {
       return res.status(400).json({ errMessage: "아이디나 패스워드 값이 올바르지 않습니다" });
     } else {
       return res.status(400).json({ errMessage: "제목이나 내용을 적어 주세요." });
